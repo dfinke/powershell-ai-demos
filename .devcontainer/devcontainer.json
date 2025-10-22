@@ -1,0 +1,26 @@
+{
+  "name": "PowerShell AI Demos",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.powershell"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "pwsh",
+        "terminal.integrated.profiles.linux": {
+          "pwsh": {
+            "path": "/usr/bin/pwsh",
+            "icon": "terminal-powershell"
+          }
+        },
+        "powershell.powerShellDefaultVersion": "PowerShell 7",
+        "powershell.integratedConsole.showOnStartup": false
+      }
+    }
+  },
+  "postCreateCommand": "pwsh -NoLogo -NoProfile -Command 'Get-Module -ListAvailable'",
+  "remoteUser": "vscode"
+}
